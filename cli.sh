@@ -36,6 +36,7 @@ function run() {
     --env "OAUTH_GITHUB_API_KEY=$OAUTH_GITHUB_API_KEY" \
     --env "OAUTH_GITHUB_APP_SECRET=$OAUTH_GITHUB_APP_SECRET" \
     --volume $PWD/data:/home/git/data \
+    --volume $PWD/logs:/home/git/gitlab/log \
     sameersbn/gitlab:$GITLAB_VERSION
 }
 

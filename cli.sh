@@ -8,7 +8,7 @@ source ../bin/tasks.sh
 function build() {
   echo "building: $CONTAINER_NAME"
 
-  docker pull gitlab/gitlab-ce:latest
+  docker pull sameersbn/gitlab:$GITLAB_VERSION
 
   echo "build finished"
 }
@@ -37,6 +37,18 @@ function run() {
     --env "OAUTH_GITHUB_APP_SECRET=$OAUTH_GITHUB_APP_SECRET" \
     --volume $PWD/data:/home/git/data \
     sameersbn/gitlab:$GITLAB_VERSION
+}
+
+function debug() {
+  ./cli.sh remove
+  ./cli.sh build
+
+  echo "connecting to container $CONTAINER_NAME"
+  docker run \
+    --interactive \
+    --tty \
+    --name "$CONTAINER_NAME" \
+    --entrypoint=sh "sameersbn/gitlab:$GITLAB_VERSION"
 }
 
 function backup() {

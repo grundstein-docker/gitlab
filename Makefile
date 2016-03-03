@@ -44,16 +44,16 @@ help:
 	@echo "\
 Usage \n\
 make TASK\n\
-
-TASKS:
-	dev     - build then tail logs
-	build   - docker build container
-	run     - docker run container
-	debug   - connect to docker container
-	logs    - tail docker container logs
-	rm      - remove docker container
-	stop    - stop docker container
-	backup  - run gitlab backup task
+\n\
+TASKS: \n\
+	dev     - build then tail logs \n\
+	build   - docker build container \n\
+	run     - docker run container \n\
+	debug   - connect to docker container \n\
+	logs    - tail docker container logs \n\
+	rm      - remove docker container \n\
+	stop    - stop docker container \n\
+	backup  - run gitlab backup task \n\
 \n\
 	help      - this help text \n\
 "

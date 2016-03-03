@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITLAB_VERSION=8.4.1
+GITLAB_VERSION=8.5.1
 
 source ./ENV.sh
 source ../bin/tasks.sh
@@ -78,7 +78,6 @@ function backup() {
 
   run
 }
-
 
 function help() {
   echo "Container: $CONTAINER_NAME"

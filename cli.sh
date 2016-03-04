@@ -22,12 +22,13 @@ function run() {
     --hostname $HOSTNAME \
     --name $CONTAINER_NAME \
     --detach \
+    -u git \
     --link magic-postgres:postgresql \
     --link magic-redis:redisio \
     --publish $HOST_PORT_22:$CONTAINER_PORT_22 \
     --publish $HOST_PORT_80:$CONTAINER_PORT_80 \
     --env "GITLAB_HOST=$HOSTNAME" \
-    --env "GITLAB_PORT=$HOST_PORT_80" \
+    --env "GITLAB_PORT=80" \
     --env "GITLAB_SSH_PORT=$HOST_PORT_22" \
     --env "DB_NAME=$GITLAB_DB_NAME" \
     --env "DB_USER=$GITLAB_DB_USER" \

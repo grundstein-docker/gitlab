@@ -36,6 +36,8 @@ function run() {
     --env "GITLAB_SECRETS_DB_KEY_BASE=$GITLAB_SECRETS_DB_KEY_BASE" \
     --env "OAUTH_GITHUB_API_KEY=$OAUTH_GITHUB_API_KEY" \
     --env "OAUTH_GITHUB_APP_SECRET=$OAUTH_GITHUB_APP_SECRET" \
+    --env "SMTP_USER=$GITLAB_SMTP_USER" \
+    --env "SMTP_PASS=$GITLAB_SMTP_PASS" \
     --volume $PWD/data:/home/git/data \
     --volume $PWD/logs:/home/git/gitlab/log \
     sameersbn/gitlab:$GITLAB_VERSION

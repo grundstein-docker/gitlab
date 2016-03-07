@@ -22,7 +22,6 @@ function run() {
     --hostname $HOSTNAME \
     --name $CONTAINER_NAME \
     --detach \
-    -u git \
     --link magic-postgres:postgresql \
     --link magic-redis:redisio \
     --publish $HOST_PORT_22:$CONTAINER_PORT_22 \

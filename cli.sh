@@ -40,6 +40,10 @@ function run() {
     --volume $PWD/data:/home/git/data \
     --volume $PWD/logs:/home/git/gitlab/log \
     sameersbn/gitlab:$GITLAB_VERSION
+
+  ip
+
+  echo "started docker container $CONTAINER_NAME"
 }
 
 function debug() {

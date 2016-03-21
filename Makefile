@@ -35,6 +35,9 @@ rm:
 stop:
 	@./cli.sh stop
 
+ip:
+	@./cli.sh ip
+
 backup:
 	@./cli.sh backup
 

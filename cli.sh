@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITLAB_VERSION=8.5.1
+GITLAB_VERSION=8.6.1
 
 source ./ENV.sh
 source ../bin/tasks.sh

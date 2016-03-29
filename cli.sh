@@ -91,7 +91,7 @@ Container: $CONTAINER_NAME"
 
 Usage:
 
-make gitlab-[TASK]
+make [TASK]
 ./cli.sh [TASK]
 
 TASKS:

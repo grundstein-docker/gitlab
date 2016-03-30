@@ -3,7 +3,7 @@
 GITLAB_VERSION=8.6.1
 
 source ./ENV.sh
-source ../bin/tasks.sh
+source ../../bin/tasks.sh
 
 function build() {
   echo "building: $CONTAINER_NAME"
@@ -25,8 +25,6 @@ function run() {
     --link magic-postgres:postgresql \
     --link magic-redis:redisio \
     --publish $HOST_PORT_22:$CONTAINER_PORT_22 \
-    --publish $HOST_PORT_80:$CONTAINER_PORT_80 \
-    --publish $HOST_PORT_443:$CONTAINER_PORT_443 \
     --env "GITLAB_HOST=$HOSTNAME" \
     --env "GITLAB_PORT=$HOST_PORT_80" \
     --env "GITLAB_SSH_PORT=$HOST_PORT_22" \
@@ -88,7 +86,7 @@ function backup() {
 
 function help() {
 echo "
-Container: $CONTAINER_NAME"
+Container: $CONTAINER_NAME
 
 Usage:
 

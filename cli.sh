@@ -36,8 +36,8 @@ function run() {
     --env "OAUTH_GITHUB_APP_SECRET=$OAUTH_GITHUB_APP_SECRET" \
     --env "SMTP_USER=$GITLAB_SMTP_USER" \
     --env "SMTP_PASS=$GITLAB_SMTP_PASS" \
-    --volume $PWD/data:/home/git/data \
-    --volume $PWD/logs:/home/git/gitlab/log \
+    --volume $DATA_DIR/gitlab/data:/home/git/data \
+    --volume $DATA_DIR/gitlab/logs:/home/git/gitlab/log \
     sameersbn/gitlab:$GITLAB_VERSION
 
   ip
@@ -78,7 +78,8 @@ function backup() {
     --env "GITLAB_SECRETS_DB_KEY_BASE=$GITLAB_SECRETS_DB_KEY_BASE" \
     --env "OAUTH_GITHUB_API_KEY=$OAUTH_GITHUB_API_KEY" \
     --env "OAUTH_GITHUB_APP_SECRET=$OAUTH_GITHUB_APP_SECRET" \
-    --volume $PWD/data:/home/git/data \
+    --volume $DATA_DIR/gitlab/data:/home/git/data \
+    --volume $DATA_DIR/gitlab/logs:/home/git/gitlab/log \
     sameersbn/gitlab:$GITLAB_VERSION app:rake gitlab:backup:create
 
   run

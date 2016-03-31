@@ -88,22 +88,6 @@ function backup() {
   echo-finished $@
 }
 
-function update() {
-  echo-start $@
-
-  git pull
-
-  echo-finished $@
-}
-
-function status() {
-  echo-start $@
-
-  git status
-
-  echo-finished $@
-}
-
 function help() {
 echo "
 Container: $CONTAINER_NAME

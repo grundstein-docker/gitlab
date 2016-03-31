@@ -7,7 +7,10 @@
 	logs \
 	rm \
 	stop \
+	ip \
 	backup \
+	update \
+	status \
 	help
 
 
@@ -41,5 +44,11 @@ ip:
 backup:
 	@./cli.sh backup
 
-gitlab-help:
+update:
+	git pull
+
+status:
+	git status
+
+help:
 	@./cli.sh help

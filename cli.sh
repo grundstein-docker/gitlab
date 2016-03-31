@@ -6,17 +6,17 @@ source ./ENV.sh
 source ../../bin/tasks.sh
 
 function build() {
-  echo-start $@
+  echo-start "build"
 
   docker pull sameersbn/gitlab:$GITLAB_VERSION
 
-  echo-finished $@
+  echo-finished "build"
 }
 
 function run() {
   remove
 
-  echo-start $@
+  echo-start "run"
 
   docker run \
     --hostname $HOSTNAME \
@@ -42,7 +42,7 @@ function run() {
 
   ip
 
-  echo-finished $@
+  echo-finished "run"
 }
 
 function debug() {
@@ -59,7 +59,7 @@ function debug() {
 }
 
 function backup() {
-  echo-start $@
+  echo-start "backup"
 
   remove
 
@@ -85,7 +85,7 @@ function backup() {
 
   run
 
-  echo-finished $@
+  echo-finished "backup"
 }
 
 function help() {

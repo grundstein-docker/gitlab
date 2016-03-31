@@ -6,17 +6,17 @@ source ./ENV.sh
 source ../../bin/tasks.sh
 
 function build() {
-  echo "building: $CONTAINER_NAME"
+  echo-start $@
 
   docker pull sameersbn/gitlab:$GITLAB_VERSION
 
-  echo "build finished"
+  echo-finished $@
 }
 
 function run() {
   remove
 
-  echo "starting container $CONTAINER_NAME"
+  echo-start $@
 
   docker run \
     --hostname $HOSTNAME \
@@ -42,14 +42,15 @@ function run() {
 
   ip
 
-  echo "started docker container $CONTAINER_NAME"
+  echo-finished $@
 }
 
 function debug() {
   remove
   build
 
-  echo "connecting to container $CONTAINER_NAME"
+  echo-start "connecting debug"
+
   docker run \
     --interactive \
     --tty \
@@ -58,7 +59,7 @@ function debug() {
 }
 
 function backup() {
-  echo "backup $CONTAINER_NAME"
+  echo-start $@
 
   remove
 
@@ -83,14 +84,24 @@ function backup() {
     sameersbn/gitlab:$GITLAB_VERSION app:rake gitlab:backup:create
 
   run
+
+  echo-finished $@
 }
 
 function update() {
+  echo-start $@
+
   git pull
+
+  echo-finished $@
 }
 
 function status() {
+  echo-start $@
+
   git status
+
+  echo-finished $@
 }
 
 function help() {

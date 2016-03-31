@@ -46,8 +46,8 @@ function run() {
 }
 
 function debug() {
-  ./cli.sh remove
-  ./cli.sh build
+  remove
+  build
 
   echo "connecting to container $CONTAINER_NAME"
   docker run \
@@ -83,6 +83,14 @@ function backup() {
     sameersbn/gitlab:$GITLAB_VERSION app:rake gitlab:backup:create
 
   run
+}
+
+function update() {
+  git pull
+}
+
+function status() {
+  git status
 }
 
 function help() {

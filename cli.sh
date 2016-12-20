@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITLAB_VERSION=8.13.5
+GITLAB_VERSION=8.14.5
 IP=172.18.0.6
 
 source ./ENV.sh
